@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from .models import db, QuestionT2
+from .models import db, login_manager, QuestionT2
 from .assessments import assessments
 from .auth import auth
 from .stats import stats
@@ -24,5 +24,7 @@ app.register_blueprint(student_stats, url_prefix="/student-stats")
 app.register_blueprint(auth)
 
 db.init_app(app)
+login_manager.init_app(app)
+
 
 from . import routes

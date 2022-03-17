@@ -2,4 +2,10 @@
 
 {% block content %}
 <h1>Login page</h1>
+<form action="" method="POST">
+    {{ form.csrf_token }}
+    {{ form.username.label }}{{ form.username }}
+    {{ form.password.label }}{{ form.password }}
+    {{form.submit}}
+</form>
 {% endblock %}
