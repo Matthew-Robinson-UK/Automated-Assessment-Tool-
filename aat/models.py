@@ -249,6 +249,7 @@ class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30), unique=True, nullable=False)
     hashed_password = db.Column(db.String(128))
+    tier = db.Column(db.String(10), default="Bronze")
     # If is_admin is set to True, any given role will be overridden to give max access
     # (i.e. the User will be given a lecturer role)
     is_admin = db.Column(db.Boolean, nullable=False, default=False)

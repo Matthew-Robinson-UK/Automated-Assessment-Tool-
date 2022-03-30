@@ -330,12 +330,14 @@ with app.app_context():
                 password="j",
                 is_admin=True,
                 role_id=1,
+                tier="Silver"
             ),
             User(  # 2
                 name="Kate",
                 password="k",
                 is_admin=True,
                 role_id=1,
+                tier="Gold"
             ),
             User(  # 3
                 name="Al",
@@ -444,9 +446,22 @@ with app.app_context():
                 response_content="adad",
                 is_correct=False,
             ),
+            # PLEASE NOTE CAREFUL NOT TO CREATE RESPONSES
+            # FOR QUESTIONS THAT ARE NOT LINKED TO THE GIVEN
+            # ASSESSMENT 
+            # THE POINTS WILL ADD TO THEIR RESULT 
+            # BUT THE QUESTION STILL WON'T SHOW IN THE 
+            # ASSESSMENT ITSELF 
+            # ResponseT2(  # 6
+            #     user_id=4,
+            #     assessment_id=1,
+            #     t2_question_id=3,
+            #     response_content=".",
+            #     is_correct=True,
+            # ),
             ResponseT2(  # 6
                 user_id=4,
-                assessment_id=1,
+                assessment_id=6,
                 t2_question_id=3,
                 response_content=".",
                 is_correct=True,
